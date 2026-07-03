@@ -1,0 +1,56 @@
+<Window x:Class="osd7.VolumeOSDWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight"
+        Width="220"
+        Height="60"
+        WindowStartupLocation="Manual">
+    <Grid Background="Transparent">
+        <Border x:Name="ContentRoot" Background="Transparent" Margin="8">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4">
+                <Grid Width="200" Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="38" />
+                        <ColumnDefinition Width="6" />
+                        <ColumnDefinition Width="156" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="LevelPercentageText"
+                               Grid.Column="0"
+                               Text="100%"
+                               FontSize="15"
+                               FontFamily="Segoe UI, Tahoma"
+                               Foreground="White"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0.4,2">
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="4" 
+                                              Color="Black" 
+                                              Direction="315" 
+                                              ShadowDepth="4" 
+                                              Opacity="1"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    <Grid Grid.Column="2" Height="6" Width="156" VerticalAlignment="Center">
+                        <Rectangle Fill="#4CFFFFFF" RadiusX="2" RadiusY="2" />
+
+                        <Rectangle x:Name="LevelBarFill"
+                                   Fill="#FFFFFFFF"
+                                   RadiusX="2"
+                                   RadiusY="2"
+                                   HorizontalAlignment="Left"
+                                   Width="156" />
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
